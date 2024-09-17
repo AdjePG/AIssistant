@@ -1,0 +1,47 @@
+.textarea {
+    background: none;
+    border-radius: 18px;
+    box-sizing: border-box;
+    field-sizing: content;
+    font-size: 13px;
+    height: 100%;
+    resize: none;
+    outline: none;
+    padding: 16px 0 16px 16px;
+    width: 100%;
+}
+
+.dropzone {
+    position: absolute;
+    inset: 0;
+    border: dashed 4px #0084ff4b;
+    border-radius: 8px;
+    box-sizing: border-box;
+    height: 100%;
+    z-index: 1;
+}
+
+.dropzone_background {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.write {
+    background: var(--tertiary);
+    grid-area: write;
+}
+
+.read {
+    grid-area: read;
+
+    &.ingredients {
+        grid-area: ingredients;
+    }
+
+    &.steps {
+        grid-area: steps;
+    }
+}

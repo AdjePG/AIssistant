@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![AIssistant Front Page](/README%20sources/repositoryImage.png)
 
-## Getting Started
+# The **AIssistant** repository
 
-First, run the development server:
+<u>List of contents:</u>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [About the project](#about-the-project)
+- [Requisites](#requisites)
+- [Technologies](#technologies)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About the project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<p align="justify"><strong>AIssistant</strong> is a website with a simple <i>intelligent assistant</i> that helps you with your daily duties and important tasks. You can translate text, generate recipes or answers questions based on a topic you want</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<p align="justify">The project is divided in two main parts, which are the server side and the client side. I use React with NextJS and its API, and the OpenAI and Gemini API for content and image generation</p>
 
-## Learn More
+## Requisites
+If you want to clone the project, you'll just need the following programs and commands:
+  
+  - NodeJS (v20.11.1 recommended)
+  - Write `npm install` in a console to run the client and server project to install dependencies
+  - Write `npm run dev` in a console to run the client and server project in development mode
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![TypeScript](https://img.shields.io/badge/Typescript-007ACC?style=for-the-badge&logo=typescript&logoColor=white&color=blue)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![NextJS](https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![OpenAI API](https://img.shields.io/badge/OpenAI_API-000000?style=for-the-badge&logo=openai&logoColor=white)
+![Gemini API](https://img.shields.io/badge/Gemini_API-5395FD?style=for-the-badge&logo=googlegemini&logoColor=white)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="center">Adrià Pulido González - 2024</p>

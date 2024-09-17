@@ -1,0 +1,4 @@
+.quiz {
+    scrollbar-gutter: stable;
+    grid-area: quiz;
+}
