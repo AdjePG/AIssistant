@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import TranslationContainer from "@/app/translate/TranslationContainer";
+import TranslationContainer from "@/components/Containers/TranslationContainer";
 import TranslateIcon from "@/icons/TranslateIcon";
 
 export const metadata: Metadata = {

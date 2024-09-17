@@ -6,6 +6,7 @@
 
 - [About the project](#about-the-project)
 - [Requisites](#requisites)
+- [Screenshots](#screenshots)
 - [Technologies](#technologies)
 
 ## About the project
@@ -20,6 +21,18 @@ If you want to clone the project, you'll just need the following programs and co
   - NodeJS (v20.11.1 recommended)
   - Write `npm install` in a console to run the client and server project to install dependencies
   - Write `npm run dev` in a console to run the client and server project in development mode
+
+## Screenshots
+<img src="README%20sources/translatorPage.png" alt="Translator page" style="max-width:800px; width:100%"/>
+<p>Translation page with a sentence to translate. On the right side, there is the possibility to play the narrator or copy the translated text.</p>
+<br/>
+
+<img src="README%20sources/recipesPage.png" alt="Recipes page" style="max-width:800px; width:100%"/>
+<p>Recipe generation page with 'Spanish omelette' as a prompt and its title, ingredients and steps. There's also the image of the recipe</p>
+<br/>
+
+<img src="README%20sources/quizzesPage.png" alt="Quizzes page" style="max-width:800px; width:100%"/>
+<p>Quiz generation page with a curiosity about the written topic and the question with its answers.</p>
 
 ## Technologies
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)

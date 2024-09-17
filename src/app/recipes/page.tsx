@@ -1,9 +1,9 @@
 import { Metadata } from "next";
-import RecipesContainer from "@/app/recipes/RecipesContainer";
+import RecipesContainer from "@/components/Containers/RecipesContainer";
 import RecipesIcon from "@/icons/RecipesIcon";
 
 export const metadata: Metadata = {
-  title: "Recipes generator - AIssistant"
+  title: "Recipes - AIssistant"
 };
 
 export default function Recipes() {
