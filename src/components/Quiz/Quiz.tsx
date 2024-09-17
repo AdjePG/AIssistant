@@ -1,5 +1,5 @@
 import styles from '@/components/Quiz/Quiz.module.css'
-import { useId, useRef, useState } from 'react'
+import { useId, useState } from 'react'
 import RoundedButton from '../RoundedButton/RoundedButton'
 
 enum Answer {

@@ -11,7 +11,7 @@ type QuizResponseType =
     | { quiz: undefined, errorMessage: string }
 
 export async function generateCuriosity({text}: {text: string}) {
-    const curiosity: CuriosityResponseType = await fetch('http://localhost:3000/api/gemini/generate-quiz/curiosity', 
+    const curiosity: CuriosityResponseType = await fetch('api/gemini/generate-quiz/curiosity', 
         {
             method: 'POST',
             headers: {
@@ -42,7 +42,7 @@ export async function generateCuriosity({text}: {text: string}) {
 }
 
 export async function generateQuiz({explanation}: {explanation: string}) {
-    const recipeResult: QuizResponseType = await fetch('http://localhost:3000/api/gemini/generate-quiz/quiz', 
+    const recipeResult: QuizResponseType = await fetch('api/gemini/generate-quiz/quiz', 
         {
             method: 'POST',
             headers: {

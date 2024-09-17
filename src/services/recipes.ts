@@ -7,7 +7,7 @@ type RecipeImageResponseType =
     | { image: string, errorMessage: undefined }
 
 export async function generateRecipeText({text}: {text: string}) {
-    const recipe: RecipeTextResponseType = await fetch('http://localhost:3000/api/gemini/generate-recipe', 
+    const recipe: RecipeTextResponseType = await fetch('api/gemini/generate-recipe', 
         {
             method: 'POST',
             headers: {
@@ -55,7 +55,7 @@ export async function generateRecipeText({text}: {text: string}) {
 }
 
 export async function generateRecipeImage({title}: {title: string}) {
-    const recipeImage: RecipeImageResponseType = await fetch('http://localhost:3000/api/openai/generate-recipe-image', 
+    const recipeImage: RecipeImageResponseType = await fetch('api/openai/generate-recipe-image', 
         {
             method: 'POST',
             headers: {

@@ -21,7 +21,7 @@ export async function translate({
 			errorMessage: undefined
 		}
 	} else {
-		translateResult = await fetch('http://localhost:3000/api/gemini/translate', 
+		translateResult = await fetch('api/gemini/translate', 
 			{
 				method: 'POST',
 				headers: {
