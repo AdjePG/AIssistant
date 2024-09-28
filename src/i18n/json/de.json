@@ -1,0 +1,88 @@
+{
+    "navigatorBar": {
+        "translator": "Übersetzer",
+        "recipes": "Rezepte",
+        "trivia": "Trivia",
+        "training": "Training"
+    },
+    "header": {
+        "languages": {
+            "es": "Spanisch",
+            "ca": "Katalanisch",
+            "en": "Englisch",
+            "fr": "Französisch",
+            "de": "Deutsch",
+            "it": "Italienisch"
+        },
+        "titles": {
+            "translator": "Übersetzer",
+            "recipes": "Rezepte",
+            "trivia": "Trivia",
+            "training": "Training"
+        }
+    },
+    "pages": {
+        "home": {
+            "leftTitle": "Willkommen bei ",
+            "rightTitle": "!"
+        },
+        "translator": {
+            "languages": {
+                "ar": "Arabisch",
+                "ca": "Katalanisch",
+                "cs": "Tschechisch",
+                "da": "Dänisch",
+                "el": "Griechisch",
+                "en": "Englisch",
+                "es": "Spanisch",
+                "de": "Deutsch",
+                "fi": "Finnisch",
+                "fr": "Französisch",
+                "it": "Italienisch",
+                "ja": "Japanisch",
+                "nb": "Norwegisch",
+                "pt": "Portugiesisch",
+                "ru": "Russisch",
+                "sv": "Schwedisch",
+                "uk": "Ukrainisch",
+                "zh": "Chinesisch"
+            },
+            "auto": "Automatisch",
+            "writePlaceholder": "Schreiben oder eine Textdatei ziehen, um zu übersetzen."
+        },
+        "recipes": {
+            "writePlaceholder": "Fügen Sie einige Zutaten oder ein traditionelles Gericht hinzu.",
+            "submitButton": "Rezept erstellen",
+            "recipesPlaceholder": "Erstelle ein Rezept in wenigen Sekunden!"
+        },
+        "trivia": {
+            "writePlaceholder": "Fügen Sie ein Thema hinzu, um eine Trivia-Frage zu erstellen.",
+            "submitButton": "Trivia erstellen",
+            "triviaPlaceholder": "Erstelle eine Trivia-Frage in wenigen Sekunden!"
+        },
+        "training": {
+            "writePlaceholder": "Fügen Sie die Übungen hinzu, die Sie gerne machen möchten.",
+            "submitButton": "Training erstellen",
+            "trainingPlaceholder": "Erstelle eine Trainingseinheit in wenigen Sekunden!",
+            "time": "Sekunden",
+            "reps": "Wiederholungen"
+        }
+    },
+    "toast": {
+        "types": {
+            "info": "Information",
+            "success": "Erfolg",
+            "warning": "Warnung",
+            "error": "Fehler"
+        },
+        "messages": {
+            "invalidDropFile": "Bitte legen Sie eine Textdatei ab.",
+            "emptyRecipeGeneration": "Sie müssen etwas in das Textfeld eingeben, um ein Rezept zu generieren.",
+            "emptyTriviaGeneration": "Sie müssen etwas in das Textfeld eingeben, um eine Trivia-Frage zu generieren.",
+            "emptyTrainingGeneration": "Sie müssen etwas in das Textfeld eingeben, um eine Trainingseinheit zu erstellen."
+        }
+    },
+    "others": {
+        "dropzone": "Legen Sie eine Textdatei ab, um zu übersetzen."
+    }
+}

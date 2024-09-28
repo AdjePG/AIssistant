@@ -3,7 +3,7 @@ import OpenAI from "openai"
 import { z } from "zod"
 
 const bodySchema = z.object({
-    title: z.string()
+    title: z.string(),
 })
 
 const validateBodySchema = (requestBody : any) => {

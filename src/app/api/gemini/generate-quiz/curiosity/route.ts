@@ -3,7 +3,8 @@ import { NextResponse } from "next/server"
 import z from 'zod'
 
 const bodySchema = z.object({
-    text: z.string()
+    text: z.string(),
+    language: z.enum(['es', 'ca', 'en', 'fr', 'de', 'it']),
 })
 
 const validateBodySchema = (requestBody : any) => {
@@ -69,14 +70,12 @@ export async function POST(request: Request) {
             model: "gemini-1.5-flash",
             generationConfig,
             safetySettings,
-            systemInstruction: `You are an AI that generates a curiosity based on the user's topic. Provide a well-explained piece of information that is 300-400 words long and easy to understand for non-experts. The response should be in JSON format with title as a simple title (up to 15 words), curiosity as the detailed explanation divided into paragraphs, and errorMessage if the curiosity cannot be generated. If you cannot generate the curiosity, respond with {errorMessage: "The server couldn't generate the curiosity. Rewrite the prompt or try it later"}.`
+            systemInstruction: `You are an AI that generates a curiosity based on the user's topic. Provide a well-explained piece of information that is 300-400 words long and easy to understand for non-experts. The response should be in JSON format with title as a simple title (up to 10 words), curiosity as the detailed explanation divided into paragraphs, and errorMessage if the curiosity cannot be generated. The generation of the content must be in the language that is enclosed in {{ and }}. If you cannot generate the curiosity, respond with {errorMessage: "The server couldn't generate the curiosity. Rewrite the prompt or try it later"}.`
         });
-        const result = await model.generateContent(data.text);
+        const result = await model.generateContent(`Generate a curiosity about: \`${data.text}\` {{${data.language}}}`);
 
-        console.log(result.response.text())
         return NextResponse.json(JSON.parse(result.response.text()))
     } catch (error) {
-        console.log(error)
         return NextResponse.json({
             errorMessage: "The server couldn't generate the quiz. Rewrite the prompt or try it later"
         })

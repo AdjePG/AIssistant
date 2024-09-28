@@ -3,7 +3,8 @@ import { NextResponse } from "next/server"
 import { z } from "zod"
 
 const bodySchema = z.object({
-    text: z.string()
+    text: z.string(),
+    language: z.enum(['es', 'ca', 'en', 'fr', 'de', 'it'])
 })
 
 const validateBodySchema = (requestBody : any) => {
@@ -58,9 +59,9 @@ export async function POST(request: Request) {
             model: "gemini-1.5-flash",
             generationConfig,
             // systemInstruction: "You are an AI that generates a cooking recipe with the ingredients and instructions. You receive a text from the user. This text contains ingredients, a type of dish or a specific dish. DON'T answer anything, just generate a recipe. The structure of the message must be a JSON with these properties: 'title', which is going to be a simple title of a recipe (a random one); 'ingredients', which is the list of ingredients; and 'steps' which are the steps. ANY other type of answer that you cannot add in this JSON, you MUST ALWAYS answer with this JSON only `{errorMessage: The server couldn't generate the recipe. Rewrite the prompt or try it later}`. Don't add possible comments."
-            systemInstruction: `You are an AI that generates a cooking recipe based on the given ingredients and dish type. Provide the response as JSON with title (a random and simple recipe title), ingredients (the list of ingredients), and steps (the instructions). If the input cannot be processed, respond with {errorMessage: "The server couldn't generate the recipe. Rewrite the prompt or try it later"}.`
+            systemInstruction: `You are an AI that generates a cooking recipe based on the given ingredients and dish type. Provide the response as JSON with title (a random and simple recipe title), ingredients (the list of ingredients), and steps (the instructions). The generation of the content must be in the language that is enclosed in {{ and }}. If the input cannot be processed, respond with {errorMessage: "The server couldn't generate the recipe. Rewrite the prompt or try it later"}.`
         });
-        const result = await model.generateContent(data.text);
+        const result = await model.generateContent(`Generate a recipe with/about \`${data.text}\` {{${data.language}}}`);
 
         return NextResponse.json(JSON.parse(result.response.text()))
         

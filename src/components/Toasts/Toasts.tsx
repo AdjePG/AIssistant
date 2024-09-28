@@ -8,6 +8,7 @@ import WarningIcon from '@/icons/WarningIcon'
 import ErrorIcon from '@/icons/ErrorIcon'
 import RoundedButton from '@/components/RoundedButton/RoundedButton'
 import CloseIcon from '@/icons/CloseIcon'
+import { useGlobalSettings } from '@/hooks/useGlobalSettings'
 
 type Props = {
     toasts: ToastType[]
@@ -42,6 +43,8 @@ export default function Toasts({ toasts }: Props) {
 }
 
 function Toast({ id, text, toastClass, cancelable, delay }: ToastProps) {
+    const { langData } = useGlobalSettings()
+    const { types, messages } = langData.toast
     const { closeToast } = useToast()
     let title;
     let icon;
@@ -55,27 +58,27 @@ function Toast({ id, text, toastClass, cancelable, delay }: ToastProps) {
     }, [])
 
     if (toastClass === ToastClass.INFO) {
-        title = "Info"
+        title = types.info
         icon = InfoIcon
     } else if (toastClass === ToastClass.SUCCESS) {
-        title = "Success"
+        title = types.success
         icon = SuccessIcon
     } else if (toastClass === ToastClass.WARNING) {
-        title = "Warning"
+        title = types.warning
         icon = WarningIcon
     } else {
-        title = "Error"
+        title = types.error
         icon = ErrorIcon
     }
 
     return (
-        <div key={id} className={`blue-centered ${styles.toast}`}>
+        <div key={id} className={`blue-shadow ${styles.toast}`}>
             <div className={`${styles.icon} ${styles[toastClass]}`}>
                 {React.createElement(icon, { className: "w-6 h-6" })}
             </div>
             <div className={`${styles.message}`}>
                 <h2 className={`${styles.title}`}>{title}</h2>
-                <p className={`${styles.description}`}>{text}</p>
+                <p className={`${styles.description}`}>{messages?.[text] ?? text}</p>
             </div>
             {
                 cancelable &&

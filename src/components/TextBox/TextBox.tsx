@@ -7,6 +7,7 @@ import styles from "@/components/TextBox/TextBox.module.css"
 import RoundedButton from "@/components/RoundedButton/RoundedButton";
 import PasteIcon from "@/icons/PasteIcon";
 import { useToast } from "@/hooks/useToast";
+import { useGlobalSettings } from "@/hooks/useGlobalSettings";
 
 type Props = {
     type: TextBoxType,
@@ -20,6 +21,8 @@ type Props = {
 
 export default function TextBox({type, value, language, placeholder, setText, submitButton, classNameProps} : Props) {
     const { openToast } = useToast()
+    const { langData } = useGlobalSettings()
+    const { dropzone } = langData.others
     const [isDragging, setIsDragging] = useState<boolean>(false);
 
     const handleDrag = (e : React.DragEvent) => {
@@ -54,7 +57,7 @@ export default function TextBox({type, value, language, placeholder, setText, su
     
                 reader.readAsText(file);
               } else {
-                openToast("Please drop a plain text file.", ToastClass.WARNING)
+                openToast("invalidDropFile", ToastClass.WARNING)
               }
             }
           }
@@ -94,7 +97,7 @@ export default function TextBox({type, value, language, placeholder, setText, su
                     <>
                         <div className={`${styles.dropzone_background}`}>
                             <FileIcon filled duotone className="w-14 h-14" />
-                            <p>Drop a plain text file to translate</p>
+                            <p>{dropzone}</p>
                         </div>
                         <div className={`${styles.dropzone}`}
                             onDragEnter={handleDrag}
@@ -163,5 +166,5 @@ export default function TextBox({type, value, language, placeholder, setText, su
                     null
             }
         </div>
-     )
+    )
 }

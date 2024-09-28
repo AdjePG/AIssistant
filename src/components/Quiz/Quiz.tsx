@@ -42,7 +42,7 @@ export default function Quiz ({quiz} : Props) {
         }
     }
 
-    const setBackground = (index: number) => {
+    const setBackground = (correctAnswer: number, index: number) => {
         if (isCorrectAnswer === Answer.NONE) {
             if (selectedAnswer !== index) {
                 return "hover:bg-hover"
@@ -56,6 +56,10 @@ export default function Quiz ({quiz} : Props) {
         } else if (isCorrectAnswer === Answer.INCORRECT) {
             if (selectedAnswer === index) {
                 return "bg-[#a32c2c70]"
+            }
+
+            if (index === correctAnswer) {
+                return "bg-[#009e2f70]"
             }
         }
 
@@ -71,7 +75,7 @@ export default function Quiz ({quiz} : Props) {
                     const uniqueId = `${answerIdPrefix}-${index}`
                     
                     return (
-                        <li key={uniqueId} className={`${setBackground(index)} transition-colors duration-300 ease-in-out cursor-pointer rounded-lg select-none`}>
+                        <li key={uniqueId} className={`${setBackground(quiz.correctAnswer, index)} transition-[background-color] duration-300 ease-in-out cursor-pointer rounded-lg select-none`}>
                             <label htmlFor={uniqueId} className='inline-block w-full p-2 cursor-pointer'>
                                 <input type="radio" name="answer" id={uniqueId} value={index} disabled={Answer.NONE !== isCorrectAnswer} onChange={(e) => handleChange(e)} className='hidden'/>
                                 {answer}

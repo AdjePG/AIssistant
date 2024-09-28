@@ -3,7 +3,8 @@ import { NextResponse } from "next/server"
 import { z } from "zod"
 
 const bodySchema = z.object({
-    explanation: z.string()
+    explanation: z.string(),
+    language: z.enum(['es', 'ca', 'en', 'fr', 'de', 'it']),
 })
 
 const validateBodySchema = (requestBody : any) => {
@@ -54,9 +55,9 @@ export async function POST(request: Request) {
         const model = ai.getGenerativeModel({ 
             model: "gemini-1.5-flash",
             generationConfig,
-            systemInstruction: `You are an AI that generates a quiz based on the user's text. Create a question from the text, provide 3 possible answers (one correct and two incorrect), and indicate the correct answer. Format the response as JSON with question, answers (a list of three answers), and correctAnswer (the index of the correct answer in the answers list). If you cannot generate the quiz, respond with {errorMessage: "The server couldn't generate the quiz. Rewrite the prompt or try it later"}.`
+            systemInstruction: `You are an AI that generates a quiz based on the user's text. Create a question from the text, provide 3 possible answers (one correct and two incorrect), and indicate the correct answer. Format the response as JSON with question, answers (a list of three answers), and correctAnswer (the index of the correct answer in the answers list). The generation of the content must be in the language that is enclosed in {{ and }}. If you cannot generate the quiz, respond with {errorMessage: "The server couldn't generate the quiz. Rewrite the prompt or try it later"}.`
         });
-        const result = await model.generateContent(data.explanation);
+        const result = await model.generateContent(`Generate the quiz about this text: \`${data.explanation}\` {{${data.language}}}`);
 
         return NextResponse.json({
             quiz: JSON.parse(result.response.text())

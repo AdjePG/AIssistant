@@ -14,7 +14,7 @@ export default function RoundedButton({clickFunction, label, isSumbit, children,
         <button 
             type={isSumbit ? 'submit' : 'button'}
             onClick={clickFunction}
-            className={`flex justify-center items-center ${label !== undefined ? 'w-fit' : 'w-10'} gap-2 h-10 hover:bg-hover duration-200 ease-in-out rounded-full ${styles[classNameProps?.area ?? '']} ${classNameProps?.general ?? ''}`}
+            className={`flex justify-center items-center ${label !== undefined ? 'w-fit' : 'w-10'} gap-2 h-10 transition-[background-color] hover:bg-hover duration-200 ease-in-out rounded-full ${styles[classNameProps?.area ?? '']} ${classNameProps?.general ?? ''}`}
         >
             {
                 children !== undefined

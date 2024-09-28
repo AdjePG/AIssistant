@@ -1,5 +1,3 @@
-import { AutoLanguageType, LanguageType } from "@/utils/types"
-
 type ResponseType =
 	| { translatedText: undefined, errorMessage: string }
 	| { translatedText: string, errorMessage: undefined }
@@ -9,8 +7,8 @@ export async function translate({
 	toLanguage,
 	text
 }: {
-	fromLanguage: AutoLanguageType | LanguageType,
-	toLanguage: LanguageType,
+	fromLanguage: string,
+	toLanguage: string,
 	text: string
 }) {
 	let translateResult: ResponseType
@@ -21,7 +19,8 @@ export async function translate({
 			errorMessage: undefined
 		}
 	} else {
-		translateResult = await fetch('api/gemini/translate', 
+		console.log(window.location.origin)
+		translateResult = await fetch(`${window.location.origin}/api/gemini/translate`, 
 			{
 				method: 'POST',
 				headers: {

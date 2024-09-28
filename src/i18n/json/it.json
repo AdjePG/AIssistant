@@ -1,0 +1,88 @@
+{
+    "navigatorBar": {
+        "translator": "Traduttore",
+        "recipes": "Ricette",
+        "trivia": "Trivia",
+        "training": "Allenamento"
+    },
+    "header": {
+        "languages": {
+            "es": "Spagnolo",
+            "ca": "Catalano",
+            "en": "Inglese",
+            "fr": "Francese",
+            "de": "Tedesco",
+            "it": "Italiano"
+        },
+        "titles": {
+            "translator": "Traduttore",
+            "recipes": "Ricette",
+            "trivia": "Trivia",
+            "training": "Allenamento"
+        }
+    },
+    "pages": {
+        "home": {
+            "leftTitle": "Benvenuti a ",
+            "rightTitle": "!"
+        },
+        "translator": {
+            "languages": {
+                "ar": "Arabo",
+                "ca": "Catalano",
+                "cs": "Ceco",
+                "da": "Danese",
+                "el": "Greco",
+                "en": "Inglese",
+                "es": "Spagnolo",
+                "de": "Tedesco",
+                "fi": "Finlandese",
+                "fr": "Francese",
+                "it": "Italiano",
+                "ja": "Giapponese",
+                "nb": "Norvegese",
+                "pt": "Portoghese",
+                "ru": "Russo",
+                "sv": "Svedese",
+                "uk": "Ucraino",
+                "zh": "Cinese"
+            },
+            "auto": "Automatico",
+            "writePlaceholder": "Scrivi o trascina un file di testo per tradurre."
+        },
+        "recipes": {
+            "writePlaceholder": "Aggiungi qualche ingrediente o un piatto tradizionale.",
+            "submitButton": "Genera ricetta",
+            "recipesPlaceholder": "Crea una ricetta in pochi secondi!"
+        },
+        "trivia": {
+            "writePlaceholder": "Aggiungi un argomento per creare una domanda trivia.",
+            "submitButton": "Genera trivia",
+            "triviaPlaceholder": "Crea una domanda trivia in pochi secondi!"
+        },
+        "training": {
+            "writePlaceholder": "Aggiungi gli esercizi che vorresti fare.",
+            "submitButton": "Genera allenamento",
+            "trainingPlaceholder": "Crea una sessione di allenamento in pochi secondi!",
+            "time": "secondi",
+            "reps": "ripetizioni"
+        }
+    },
+    "toast": {
+        "types": {
+            "info": "Informazione",
+            "success": "Successo",
+            "warning": "Avviso",
+            "error": "Errore"
+        },
+        "messages": {
+            "invalidDropFile": "Per favore, trascina un file di testo.",
+            "emptyRecipeGeneration": "Devi aggiungere qualcosa nel testo per generare una ricetta.",
+            "emptyTriviaGeneration": "Devi aggiungere qualcosa nel testo per generare una domanda trivia.",
+            "emptyTrainingGeneration": "Devi aggiungere qualcosa nel testo per generare una sessione di allenamento."
+        }
+    },
+    "others": {
+        "dropzone": "Trascina un file di testo per tradurre."
+    }
+}

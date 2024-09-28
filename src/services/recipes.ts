@@ -1,3 +1,5 @@
+import { Locale } from "@/i18n/i18n.config";
+
 type RecipeTextResponseType =
     | { title: string, ingredients: string, steps: string, errorMessage: undefined }
     | { title: undefined, ingredients: undefined, steps: undefined, errorMessage: string }
@@ -6,15 +8,22 @@ type RecipeImageResponseType =
     | { image: undefined, errorMessage: string }
     | { image: string, errorMessage: undefined }
 
-export async function generateRecipeText({text}: {text: string}) {
-    const recipe: RecipeTextResponseType = await fetch('api/gemini/generate-recipe', 
+export async function generateRecipeText({
+    text, 
+    language
+}: {
+    text: string, 
+    language: Locale
+}) {
+    const recipe: RecipeTextResponseType = await fetch(`${window.location.origin}/api/gemini/generate-recipe`, 
         {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                text
+                text,
+                language
             })
         }
     )
@@ -55,7 +64,7 @@ export async function generateRecipeText({text}: {text: string}) {
 }
 
 export async function generateRecipeImage({title}: {title: string}) {
-    const recipeImage: RecipeImageResponseType = await fetch('api/openai/generate-recipe-image', 
+    const recipeImage: RecipeImageResponseType = await fetch(`${window.location.origin}/api/openai/generate-recipe-image`, 
         {
             method: 'POST',
             headers: {

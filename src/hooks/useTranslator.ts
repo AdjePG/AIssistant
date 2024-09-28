@@ -1,4 +1,4 @@
-import { AutoLanguage, AutoLanguageType, LanguageType } from '@/utils/types'
+import { AutoLanguage, Option } from '@/utils/types'
 import { useReducer } from 'react'
 
 enum Actions {
@@ -10,27 +10,19 @@ enum Actions {
 }
 
 type InitialStateType = {
-    fromLanguage: LanguageType | AutoLanguageType
-    toLanguage: LanguageType,
+    fromLanguage: Option,
+    toLanguage: Option,
     fromText: string,
     toText: string,
     isLoading: boolean
 }
 
 type ActionType =
-    | { type: Actions.SetFromLang, payload: LanguageType | AutoLanguageType }
-    | { type: Actions.SetToLang, payload: LanguageType }
+    | { type: Actions.SetFromLang, payload: Option }
+    | { type: Actions.SetToLang, payload: Option }
     | { type: Actions.SetFromText, payload: string }
     | { type: Actions.SetToText, payload: string }
     | { type: Actions.Reverse }
-  
-const initialState: InitialStateType = {
-    fromLanguage: 'auto',
-    toLanguage: 'en',
-    fromText: '',
-    toText: '',
-    isLoading: false
-}
 
 const reducer = (state: InitialStateType, action: ActionType) => {
     if (action.type === Actions.SetFromLang) {
@@ -76,7 +68,7 @@ const reducer = (state: InitialStateType, action: ActionType) => {
             toText
         }
     } else if (action.type === Actions.Reverse) {
-        if (state.fromLanguage === AutoLanguage) return state
+        if (state.fromLanguage.value === AutoLanguage) return state
 
         return {
             ...state,
@@ -88,17 +80,31 @@ const reducer = (state: InitialStateType, action: ActionType) => {
     return state
 }
 
-export function useTranslator() {
+export function useTranslator(langData: Record<string, any>) {
+    const initialState : InitialStateType = {
+        fromLanguage: {
+            value: "auto",
+            label: langData.auto
+        },
+        toLanguage: {
+            value: "en",
+            label: langData.languages.en
+        },
+        fromText: '',
+        toText: '',
+        isLoading: false
+    }
+
     const [{ fromLanguage, toLanguage, fromText, toText, isLoading }, dispatch] = useReducer(reducer, initialState)
 
-    const setFromLanguage = (payload: LanguageType | AutoLanguageType) => {
+    const setFromLanguage = (payload: Option) => {
         dispatch({ 
             type: Actions.SetFromLang, 
             payload 
         })
     }
 
-    const setToLanguage = (payload: LanguageType) => {
+    const setToLanguage = (payload: Option) => {
         dispatch({ 
             type: Actions.SetToLang, 
             payload 

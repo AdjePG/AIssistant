@@ -1,0 +1,86 @@
+{
+    "navigatorBar": {
+        "translator": "Traductor",
+        "recipes": "Receptes",
+        "trivia": "Trivia",
+        "training": "Entrenament"
+    },
+    "header": {
+        "languages": {
+            "es": "Espanyol",
+            "ca": "Català",
+            "en": "Anglès",
+            "fr": "Francès",
+            "de": "Alemany",
+            "it": "Italià"
+        },
+        "titles": {
+            "translator": "Traductor",
+            "recipes": "Receptes",
+            "trivia": "Trivia",
+            "training": "Entrenament"
+        }
+    },
+    "pages": {
+        "home": {
+            "leftTitle": "¡Benvinguts a ",
+            "rightTitle": "!"
+        },
+        "translator": {
+            "languages": {
+                "ar": "Àrab",
+                "ca": "Català",
+                "cs": "Txec",
+                "da": "Danès",
+                "el": "Grec",
+                "en": "Anglès",
+                "es": "Espanyol",
+                "de": "Alemany",
+                "fi": "Finlandès",
+                "fr": "Francès",
+                "it": "Italià",
+                "ja": "Japonès",
+                "nb": "Noruec",
+                "pt": "Portuguès",
+                "ru": "Rus",
+                "sv": "Suec",
+                "uk": "Ucraïnès",
+                "zh": "Xinès"
+            },
+            "auto": "Automàtic",
+            "writePlaceholder": "Escriu o arrossega un fitxer de text pla per traduir."
+        },
+        "recipes": {
+            "writePlaceholder": "Afegeix alguns ingredients o un plat tradicional.",
+            "submitButton": "Generar recepta",
+            "recipesPlaceholder": "Crea una recepta en pocs segons!"
+        },
+        "trivia": {
+            "writePlaceholder": "Afegeix un tema per crear una pregunta de trivia.",
+            "submitButton": "Generar trivia",
+            "triviaPlaceholder": "Crea una pregunta de trivia en pocs segons!"
+        }, 
+        "training": {
+            "writePlaceholder": "Afegeix els exercicis que vols practicar.",
+            "submitButton": "Generar entrenament",
+            "trainingPlaceholder": "Crea una sessió d'entrenament en pocs segons!",
+            "time": "segons",
+            "reps": "repeticions"
+        }
+    },
+    "toast": {
+        "types": {
+            "Info": "Informació",
+            "Success": "Èxit",
+            "Warning": "Avís",
+            "Error": "Error"
+        },
+        "invalidDropFile": "Has de deixar un fitxer de text pla, siusplau.",
+        "emptyRecipeGeneration": "Has d'afegir alguna cosa al quadre de text per generar una recepta.",
+        "emptyTriviaGeneration": "Has d'afegir alguna cosa al quadre de text per generar una pregunta de trivia.",
+        "emptyTrainingGeneration": "Has d'afegir alguna cosa al quadre de text per generar una sessió d'entrenament."
+    },
+    "others": {
+        "dropzone": "Deixa un fitxer de text pla per traduir."
+    }
+}

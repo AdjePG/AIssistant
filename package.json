@@ -9,14 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.5.4",
     "@google/generative-ai": "0.17.1",
-    "next": "14.2.8",
+    "negotiator": "^0.6.3",
+    "next": "^14.2.12",
     "openai": "^4.60.0",
     "react": "^18",
     "react-dom": "^18",
     "zod": "3.23.8"
   },
   "devDependencies": {
+    "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

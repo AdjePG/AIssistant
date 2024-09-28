@@ -1,0 +1,7 @@
+.translationFrom {
+    grid-area: translationFrom;
+}
+
+.translationTo {
+    grid-area: translationTo;
+}

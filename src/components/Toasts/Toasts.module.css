@@ -18,12 +18,10 @@
   background: var(--primary);
   border-radius: 12px;
   display: flex;
-  font-size: 12px;
   gap: 10px;
   height: fit-content;
   min-height: 40px;
   padding: 8px;
-  box-shadow: 0 0 15px -5px #227cd1;
 
   .message {
     flex: 1;
@@ -36,7 +34,6 @@
 
     .description {
       font-size: 14px;
-      font-weight: 200;
       margin: 0;
     }
   }
