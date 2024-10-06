@@ -53,19 +53,26 @@
         "recipes": {
             "writePlaceholder": "Ajoutez quelques ingrédients ou un plat traditionnel.",
             "submitButton": "Générer une recette",
-            "recipesPlaceholder": "Créez une recette en quelques secondes !"
+            "recipesPlaceholder": "Créez une recette en quelques secondes!"
         },
         "trivia": {
             "writePlaceholder": "Ajoutez un sujet pour créer une question de quiz.",
             "submitButton": "Générer un quiz",
-            "triviaPlaceholder": "Créez une question de quiz en quelques secondes !"
+            "triviaPlaceholder": "Créez une question de quiz en quelques secondes!",
+            "chooseAnswerButton": "Choisir option"
         },
         "training": {
             "writePlaceholder": "Ajoutez des exercices que vous aimeriez pratiquer.",
             "submitButton": "Générer un entraînement",
-            "trainingPlaceholder": "Créez une séance d'entraînement en quelques secondes !",
+            "trainingPlaceholder": "Créez une séance d'entraînement en quelques secondes!",
             "time": "secondes",
-            "reps": "répétitions"
+            "reps": "répétitions",
+            "startSessionButton": "Démarrer la session",
+            "firstExerciseRest": "Premier exercice",
+            "nextExerciseRest": "Exercice suivant",
+            "lastExerciseRest": "Dernier exercice",
+            "currentExercise": "Fais-le, courage!",
+            "nextExerciseButton": "Exercice suivant"              
         }
     },
     "toast": {

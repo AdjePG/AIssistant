@@ -1,8 +1,8 @@
 import { Locale } from "@/i18n/i18n.config";
-import { TrainingGuide } from "@/utils/types";
+import { ExerciseGuideDetails } from "@/utils/types";
 
 type ResponseType =
-    | { title: string, guide: TrainingGuide[], errorMessage: undefined }
+    | { title: string, guide: ExerciseGuideDetails[], errorMessage: undefined }
     | { title: undefined, guide: undefined, errorMessage: string }
 
 export async function generateSession({
@@ -28,7 +28,7 @@ export async function generateSession({
     .then(data => {
         return {
             title: data.title,
-            guide: data.guide as TrainingGuide[],
+            guide: data.guide as ExerciseGuideDetails[],
             errorMessage: data.errorMessage
         }
     })

@@ -1,11 +1,11 @@
-.quizzes_container {
+.training_container {
     background: var(--secondary);
     border-radius: 12px;
     display: grid;
     grid-template-areas: 
         "write write"
         "title title"
-        "read read"
+        "read training"
     ;
     grid-template-columns: 1fr 300px;
     grid-template-rows: 150px auto 1fr;
@@ -16,10 +16,10 @@
     padding: 8px;
     width: 100%;
 
-    .empty_quiz {
+    .empty_training {
         grid-area: title;
-        grid-row-end: quiz;
-        grid-column-end: quiz;
+        grid-row-end: training;
+        grid-column-end: training;
     }
 
     .title {
@@ -28,18 +28,18 @@
 }
 
 @media (max-width: 907px) {
-    .quizzes_container {
+    .training_container {
         grid-template-columns: 1fr 250px;
     }
 }
 
 @media (max-width: 539px) {
-    .quizzes_container {
+    .training_container {
         grid-template-areas: 
             "write"
             "title"
             "read"
-            "read"
+            "training"
         ;
         grid-template-columns: 1fr;
         grid-template-rows: 150px auto auto auto;

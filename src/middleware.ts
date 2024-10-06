@@ -24,6 +24,7 @@ export function middleware(request: NextRequest) {
     if (
       [
         '/assets/logo.png',
+        '/assets/sounds/bell.wav',
         '/assets/flags/es_flag.png',
         '/assets/flags/ca_flag.png',
         '/assets/flags/en_flag.png',

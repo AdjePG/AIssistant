@@ -1,4 +1,4 @@
-import { TrainingGuide } from '@/utils/types'
+import { ExerciseGuideDetails } from '@/utils/types'
 import { useReducer } from 'react'
 
 enum Actions {
@@ -11,13 +11,13 @@ type InitialStateType = {
     fromText: string,
     title: string,
     formattedGuide: string,
-    guide: TrainingGuide[] | undefined
+    guide: ExerciseGuideDetails[] | undefined
     isLoading: boolean
 }
 
 type ActionType =
     | { type: Actions.SetFromText, payload: string }
-    | { type: Actions.SetGuide, payload: { title: string, guide: TrainingGuide[], translations: Record<string, any> }}
+    | { type: Actions.SetGuide, payload: { title: string, guide: ExerciseGuideDetails[], translations: Record<string, any> }}
     | { type: Actions.SetIsLoading, payload: boolean }
 
 const initialState: InitialStateType = {
@@ -94,7 +94,7 @@ export function useTraining() {
 
     const setGuide = (payload: {
         title: string
-        guide: TrainingGuide[]
+        guide: ExerciseGuideDetails[]
         translations: Record<string, any>
     }) => {
         dispatch({ 

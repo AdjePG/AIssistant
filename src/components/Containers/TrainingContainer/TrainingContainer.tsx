@@ -10,6 +10,7 @@ import LoadingComponent from "@/components/LoadingComponent/LoadingComponent";
 import { generateSession } from "@/services/training";
 import { Locale } from "@/i18n/i18n.config";
 import { useGlobalSettings } from "@/hooks/useGlobalSettings";
+import TrainingGuide from "@/components/TrainingGuide/TrainingGuide";
 
 interface Props {
     lang : Locale
@@ -73,7 +74,7 @@ export default function TrainingContainer ({ lang } : Props) {
     }, [isLoading])
 
     return (
-        <div className={`blue-shadow ${styles.quizzes_container}`}>
+        <div className={`blue-shadow ${styles.training_container}`}>
             <TextBox
                 type={TextBoxType.WRITE}
                 value={fromText}
@@ -89,7 +90,7 @@ export default function TrainingContainer ({ lang } : Props) {
             {
                 title === '' && !isLoading
                 ?
-                    <p className={`${styles.empty_quiz} text-center text-base xs:text-xl content-center min-h-[100px]`}>{training.trainingPlaceholder}</p>
+                    <p className={`${styles.empty_training} text-center text-base xs:text-xl content-center min-h-[100px]`}>{training.trainingPlaceholder}</p>
                 :
                     <>
                     {
@@ -109,7 +110,7 @@ export default function TrainingContainer ({ lang } : Props) {
                                 {
                                     guide !== undefined
                                     ?
-                                        null
+                                        <TrainingGuide guide={guide} training={training} />
                                     :
                                         null
                                 }
@@ -118,7 +119,7 @@ export default function TrainingContainer ({ lang } : Props) {
                             <LoadingComponent
                                 classNameProps={{
                                     general: "min-h-[100px] max-h-[400px] xs:max-h-[600px]",
-                                    page: "quizzes",
+                                    page: "training",
                                     area: "title"
                                 }}  
                             />

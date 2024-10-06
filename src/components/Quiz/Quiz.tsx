@@ -14,9 +14,10 @@ interface Props {
         answers: string[]
         correctAnswer: number
     }
+    submit: string
 }
 
-export default function Quiz ({quiz} : Props) {
+export default function Quiz ({quiz, submit} : Props) {
     const [selectedAnswer, setSelectedAnswer] = useState<number>(-1);
     const [isCorrectAnswer, setIsCorrectAnswer] = useState<Answer>(Answer.NONE);
 
@@ -67,28 +68,30 @@ export default function Quiz ({quiz} : Props) {
     }
 
     return (
-        <form className={`${styles.quiz} flex flex-col p-4`} onSubmit={handleSubmit}>
-            <p>{quiz.question}</p>
-            <ul className='flex flex-col py-2 gap-1 flex-1'>
-            {
-                quiz.answers.map((answer, index) => {
-                    const uniqueId = `${answerIdPrefix}-${index}`
-                    
-                    return (
-                        <li key={uniqueId} className={`${setBackground(quiz.correctAnswer, index)} transition-[background-color] duration-300 ease-in-out cursor-pointer rounded-lg select-none`}>
-                            <label htmlFor={uniqueId} className='inline-block w-full p-2 cursor-pointer'>
-                                <input type="radio" name="answer" id={uniqueId} value={index} disabled={Answer.NONE !== isCorrectAnswer} onChange={(e) => handleChange(e)} className='hidden'/>
-                                {answer}
-                            </label>
-                        </li>
-                    )
-                })
-            }
-            </ul>
-            <div className={`${(Answer.NONE !== isCorrectAnswer || selectedAnswer === -1) && 'hidden'} flex justify-end`}>
+        <form className={`${styles.quiz} flex flex-col select-none max-h-[600px] gap-2`} onSubmit={handleSubmit}>
+            <div className='py-4 pl-4 flex-1 custom-scrollbar'>
+                <p className='mb-2'>{quiz.question}</p>
+                <ul className='flex flex-col gap-1'>
+                {
+                    quiz.answers.map((answer, index) => {
+                        const uniqueId = `${answerIdPrefix}-${index}`
+                        
+                        return (
+                            <li key={uniqueId} className={`${setBackground(quiz.correctAnswer, index)} transition-[background-color] duration-300 ease-in-out cursor-pointer rounded-lg`}>
+                                <label htmlFor={uniqueId} className='inline-block w-full p-2 cursor-pointer'>
+                                    <input type="radio" name="answer" id={uniqueId} value={index} disabled={Answer.NONE !== isCorrectAnswer} onChange={(e) => handleChange(e)} className='hidden'/>
+                                    {answer}
+                                </label>
+                            </li>
+                        )
+                    })
+                }
+                </ul>
+            </div>
+            <div className={`${(Answer.NONE !== isCorrectAnswer || selectedAnswer === -1) && 'hidden'} flex justify-end p-2`}>
                 <RoundedButton
-                    label="Submit"
-                    isSumbit
+                    label={submit}
+                    isSubmit
                 />
             </div>
         </form>

@@ -4,17 +4,17 @@ import styles from "@/components/RoundedButton/RoundedButton.module.css"
 interface Props {
     clickFunction?: () => void;
     label?: string
-    isSumbit?: boolean
+    isSubmit?: boolean
     children?: ReactNode
     classNameProps?: {[key: string]: string;}
 }
 
-export default function RoundedButton({clickFunction, label, isSumbit, children, classNameProps} : Props) {
+export default function RoundedButton({clickFunction, label, isSubmit, children, classNameProps} : Props) {
     return (
         <button 
-            type={isSumbit ? 'submit' : 'button'}
+            type={isSubmit ? 'submit' : 'button'}
             onClick={clickFunction}
-            className={`flex justify-center items-center ${label !== undefined ? 'w-fit' : 'w-10'} gap-2 h-10 transition-[background-color] hover:bg-hover duration-200 ease-in-out rounded-full ${styles[classNameProps?.area ?? '']} ${classNameProps?.general ?? ''}`}
+            className={`flex justify-center items-center ${label !== undefined ? 'w-fit' : 'w-10'} gap-2 h-10 transition-[background-color] hover:bg-hover duration-200 ease-in-out rounded-full select-none ${styles[classNameProps?.area ?? '']} ${classNameProps?.general ?? ''}`}
         >
             {
                 children !== undefined

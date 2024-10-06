@@ -74,7 +74,7 @@ function Toast({ id, text, toastClass, cancelable, delay }: ToastProps) {
     return (
         <div key={id} className={`blue-shadow ${styles.toast}`}>
             <div className={`${styles.icon} ${styles[toastClass]}`}>
-                {React.createElement(icon, { className: "w-6 h-6" })}
+                {React.createElement(icon, { className: "block w-6 h-6" })}
             </div>
             <div className={`${styles.message}`}>
                 <h2 className={`${styles.title}`}>{title}</h2>

@@ -57,7 +57,7 @@ export type LanguageType = keyof typeof Languages
 export const AutoLanguage = 'auto'
 export type AutoLanguageType = typeof AutoLanguage
 
-export type TrainingGuide = {
+export type ExerciseGuideDetails = {
     exercise: string,
     description: string
     time?: number,

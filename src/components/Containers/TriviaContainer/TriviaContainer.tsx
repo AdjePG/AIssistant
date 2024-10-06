@@ -134,6 +134,7 @@ export default function TriviaContainer ({ lang } : Props) {
                                     ?
                                         <Quiz
                                             quiz={quiz}
+                                            submit={trivia.chooseAnswerButton}
                                         />
                                     :
                                         null

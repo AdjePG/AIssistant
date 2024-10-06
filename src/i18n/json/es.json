@@ -58,14 +58,21 @@
         "trivia": {
             "writePlaceholder": "Añade un tema para crear una pregunta de trivia.",
             "submitButton": "Generar trivia",
-            "triviaPlaceholder": "¡Crea una pregunta de trivia en pocos segundos!"
+            "triviaPlaceholder": "¡Crea una pregunta de trivia en pocos segundos!",
+            "chooseAnswerButton": "Elegir opción"
         },
         "training": {
             "writePlaceholder": "Añade que ejercicios te gustaría practicar.",
             "submitButton": "Generar entrenamiento",
             "trainingPlaceholder": "¡Crea una sesión de entrenamiento en pocos segundos!",
             "time": "segundos",
-            "reps": "repeticiones"
+            "reps": "repeticiones",
+            "startSessionButton": "Iniciar sesión",
+            "firstExerciseRest": "Primer ejercicio",
+            "nextExerciseRest": "Siguiente ejercicio",
+            "lastExerciseRest": "Último ejercicio",
+            "currentExercise": "¡Házlo, ánimos!",
+            "nextExerciseButton": "Siguiente ejercicio"
         }
     },
     "toast": {
