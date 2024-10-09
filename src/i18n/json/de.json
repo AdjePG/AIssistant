@@ -90,6 +90,7 @@
         }
     },
     "others": {
-        "dropzone": "Legen Sie eine Textdatei ab, um zu übersetzen."
+        "dropzone": "Legen Sie eine Textdatei ab, um zu übersetzen.",
+        "notFound": "Diese seite war nur ein traum..."
     }
 }

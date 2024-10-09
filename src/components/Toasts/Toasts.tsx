@@ -1,3 +1,5 @@
+"use client"
+
 import { useToast } from '@/hooks/useToast'
 import styles from '@/components/Toasts/Toasts.module.css'
 import React, { useEffect } from "react"
@@ -47,7 +49,7 @@ function Toast({ id, text, toastClass, cancelable, delay }: ToastProps) {
     const { types, messages } = langData.toast
     const { closeToast } = useToast()
     let title;
-    let icon;
+    let Icon;
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -59,22 +61,22 @@ function Toast({ id, text, toastClass, cancelable, delay }: ToastProps) {
 
     if (toastClass === ToastClass.INFO) {
         title = types.info
-        icon = InfoIcon
+        Icon = InfoIcon
     } else if (toastClass === ToastClass.SUCCESS) {
         title = types.success
-        icon = SuccessIcon
+        Icon = SuccessIcon
     } else if (toastClass === ToastClass.WARNING) {
         title = types.warning
-        icon = WarningIcon
+        Icon = WarningIcon
     } else {
         title = types.error
-        icon = ErrorIcon
+        Icon = ErrorIcon
     }
 
     return (
         <div key={id} className={`blue-shadow ${styles.toast}`}>
             <div className={`${styles.icon} ${styles[toastClass]}`}>
-                {React.createElement(icon, { className: "block w-6 h-6" })}
+                <Icon className="block w-6 h-6" />
             </div>
             <div className={`${styles.message}`}>
                 <h2 className={`${styles.title}`}>{title}</h2>

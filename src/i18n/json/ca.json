@@ -88,6 +88,7 @@
         "emptyTrainingGeneration": "Has d'afegir alguna cosa al quadre de text per generar una sessió d'entrenament."
     },
     "others": {
-        "dropzone": "Deixa un fitxer de text pla per traduir."
+        "dropzone": "Deixa un fitxer de text pla per traduir.",
+        "notFound": "Aquesta pàgina era només un somni..."
     }
 }

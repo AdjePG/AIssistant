@@ -90,6 +90,7 @@
         }
     },
     "others": {
-        "dropzone": "Trascina un file di testo per tradurre."
+        "dropzone": "Trascina un file di testo per tradurre.",
+        "notFound": "Questa pagina era solo un sogno..."
     }
 }

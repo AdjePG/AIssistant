@@ -88,6 +88,7 @@
         "emptyTrainingGeneration": "You have to add something in the textbox to generate a training session."
     },
     "others": {
-        "dropzone": "Drop a plain text file to translate."
+        "dropzone": "Drop a plain text file to translate.",
+        "notFound": "This page was just a dream..."
     }
 }

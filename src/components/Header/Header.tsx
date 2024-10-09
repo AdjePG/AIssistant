@@ -87,7 +87,6 @@ export default function Header({children, section, lang} : Props) {
                         </>
                     </RoundedButton>
                 </div>
-                
             </div>
         </div>
     )

@@ -33,10 +33,6 @@ export function GlobalSettingsProvider({ children, lang, langJson } : Props) {
         document.documentElement.style.colorScheme = window.localStorage.getItem("theme-color") ?? LightDarkTheme.SYSTEM
     }, [])
 
-    useEffect(() => {
-
-    })
-
     return (
         <GlobalSettingsContext.Provider value={{
             colorTheme,

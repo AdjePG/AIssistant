@@ -90,6 +90,7 @@
         }
     },
     "others": {
-        "dropzone": "Déposez un fichier texte pour traduire."
+        "dropzone": "Déposez un fichier texte pour traduire.",
+        "notFound": "Cette page n'était qu'un rêve..."
     }
 }

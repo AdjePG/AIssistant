@@ -47,21 +47,25 @@ const reducer = (state: InitialStateType, action: ActionType) => {
         const { title, guide, translations } = action.payload
         const { time, reps } = translations
 
+        if (guide === undefined || title === undefined) {
+            return state
+        }
+
         const formattedGuide = guide.map((round, index) => {
-            let formattedGuide = (index + 1).toString()
-            formattedGuide += '. '
-            formattedGuide += round.exercise
-            formattedGuide += ' - '
+            let formattedExercise = (index + 1).toString()
+            formattedExercise += '. '
+            formattedExercise += round.exercise
+            formattedExercise += ' - '
 
             if (round.reps) {
-                formattedGuide += `${round.reps} ${reps} \n`
+                formattedExercise += `${round.reps} ${reps} \n`
             } else {
-                formattedGuide += `${round.time} ${time} \n`
+                formattedExercise += `${round.time} ${time} \n`
             }
 
-            formattedGuide += round.description
+            formattedExercise += round.description
 
-            return formattedGuide
+            return formattedExercise
         }).join('\n\n')
 
         return {
