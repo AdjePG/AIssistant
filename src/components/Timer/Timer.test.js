@@ -5,7 +5,7 @@ import { describe } from 'node:test';
 
 jest.useFakeTimers();
 
-describe ("Timer Component", () => {
+describe("Timer Component", () => {
     test("Renders", () => {
         const propsList = [
             {

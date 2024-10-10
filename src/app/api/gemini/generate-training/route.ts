@@ -100,7 +100,6 @@ export async function POST(request: Request) {
         });
         const result = await model.generateContent(`Generate a training session about: \`${data.text}\` {{${data.language}}}`);
 
-        console.log(result.response.text())
         return NextResponse.json(JSON.parse(result.response.text()))
     } catch (error) {
         return NextResponse.json({

@@ -4,6 +4,7 @@ import { Locale } from "@/i18n/i18n.config";
 import { poppins } from "@/utils/fonts";
 import { LightDarkTheme } from "@/utils/types";
 import { Metadata } from "next";
+import Script from "next/script";
 import { createContext, Dispatch, SetStateAction, useEffect, useState } from "react";
 
 type Props = {
@@ -40,6 +41,15 @@ export function GlobalSettingsProvider({ children, lang, langJson } : Props) {
             setColorTheme
         }}>
             <html lang={lang}>
+                <head>
+                    <Script 
+                        async 
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2419707164621577"
+                        crossOrigin="anonymous"
+                        strategy="afterInteractive"
+                    ></Script>
+                    <meta name="google-adsense-account" content="ca-pub-2419707164621577"></meta>
+                </head>
                 <body className={`${poppins.className}`}>
                     {children}
                 </body>
