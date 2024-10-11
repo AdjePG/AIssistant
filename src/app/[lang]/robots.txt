@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /private/
 
 Sitemap: https://aissistant.adriapulido.dev/sitemap.xml
