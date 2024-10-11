@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://aissistant.adriapulido.dev/</loc>
+        <lastmod>2024-11-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://aissistant.adriapulido.dev/es" />
+        <xhtml:link rel="alternate" hreflang="ca" href="https://aissistant.adriapulido.dev/ca" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://aissistant.adriapulido.dev/en" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aissistant.adriapulido.dev/fr" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://aissistant.adriapulido.dev/de" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://aissistant.adriapulido.dev/it" />
+    </url>
+    <url>
+        <loc>https://aissistant.adriapulido.dev/translate</loc>
+        <lastmod>2024-11-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://aissistant.adriapulido.dev/es/translate" />
+        <xhtml:link rel="alternate" hreflang="ca" href="https://aissistant.adriapulido.dev/ca/translate" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://aissistant.adriapulido.dev/en/translate" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aissistant.adriapulido.dev/fr/translate" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://aissistant.adriapulido.dev/de/translate" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://aissistant.adriapulido.dev/it/translate" />
+    </url>
+    <url>
+        <loc>https://aissistant.adriapulido.dev/recipes</loc>
+        <lastmod>2024-11-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://aissistant.adriapulido.dev/es/recipes" />
+        <xhtml:link rel="alternate" hreflang="ca" href="https://aissistant.adriapulido.dev/ca/recipes" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://aissistant.adriapulido.dev/en/recipes" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aissistant.adriapulido.dev/fr/recipes" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://aissistant.adriapulido.dev/de/recipes" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://aissistant.adriapulido.dev/it/recipes" />
+    </url>
+    <url>
+        <loc>https://aissistant.adriapulido.dev/trivia</loc>
+        <lastmod>2024-11-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://aissistant.adriapulido.dev/es/trivia" />
+        <xhtml:link rel="alternate" hreflang="ca" href="https://aissistant.adriapulido.dev/ca/trivia" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://aissistant.adriapulido.dev/en/trivia" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aissistant.adriapulido.dev/fr/trivia" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://aissistant.adriapulido.dev/de/trivia" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://aissistant.adriapulido.dev/it/trivia" />
+    </url>
+    <url>
+        <loc>https://aissistant.adriapulido.dev/training</loc>
+        <lastmod>2024-11-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://aissistant.adriapulido.dev/es/training" />
+        <xhtml:link rel="alternate" hreflang="ca" href="https://aissistant.adriapulido.dev/ca/training" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://aissistant.adriapulido.dev/en/training" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aissistant.adriapulido.dev/fr/training" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://aissistant.adriapulido.dev/de/training" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://aissistant.adriapulido.dev/it/training" />
+    </url>
+</urlset>

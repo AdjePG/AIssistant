@@ -23,6 +23,7 @@ export function middleware(request: NextRequest) {
 
     if (
       [
+        '/ads.txt',
         '/assets/logo.png',
         '/assets/sounds/bell.wav',
         '/assets/flags/es_flag.png',
