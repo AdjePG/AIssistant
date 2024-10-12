@@ -21,20 +21,9 @@ function getLocale(request: NextRequest): string | undefined {
 export function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
-    if (
-      [
-        '/ads.txt',
-        '/robots.txt',
-        '/assets/logo.png',
-        '/assets/sounds/bell.wav',
-        '/assets/flags/es_flag.png',
-        '/assets/flags/ca_flag.png',
-        '/assets/flags/en_flag.png',
-        '/assets/flags/fr_flag.png',
-        '/assets/flags/de_flag.png',
-        '/assets/flags/it_flag.png',
-      ].includes(pathname)
-    ) return
+    if (pathname.startsWith('/assets/') || pathname === '/ads.txt' || pathname === '/robots.txt' || pathname === '/sitemap.xml') {
+        return;
+    }
 
     const pathnameIsMissingLocale = i18n.locales.every(
         (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
