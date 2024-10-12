@@ -19,28 +19,32 @@ function getLocale(request: NextRequest): string | undefined {
 }
 
 export function middleware(request: NextRequest) {
-    const pathname = request.nextUrl.pathname;
+    try {
+        const pathname = request.nextUrl.pathname;
 
-    if (pathname.startsWith('/assets/') || pathname === '/ads.txt' || pathname === '/robots.txt' || pathname === '/sitemap.xml') {
-        return;
-    }
-
-    const pathnameIsMissingLocale = i18n.locales.every(
-        (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-    );
-
-    if (pathnameIsMissingLocale) {
-        const locale = getLocale(request);
-
-        if (locale === i18n.defaultLocale) {
-            return NextResponse.rewrite(
-                new URL(`/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`, request.url)
-            )
+        if (pathname.startsWith('/assets/') || pathname === '/ads.txt' || pathname === '/robots.txt' || pathname === '/sitemap.xml') {
+            return;
         }
 
-        return NextResponse.redirect(
-            new URL(`/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`, request.url)
+        const pathnameIsMissingLocale = i18n.locales.every(
+            (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
         );
+
+        if (pathnameIsMissingLocale) {
+            const locale = getLocale(request);
+
+            if (locale === i18n.defaultLocale) {
+                return NextResponse.rewrite(
+                    new URL(`/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`, request.url)
+                )
+            }
+
+            return NextResponse.redirect(
+                new URL(`/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`, request.url)
+            );
+        }
+    } catch (error) {
+        return NextResponse.error();
     }
 }
 
