@@ -7,15 +7,21 @@ import Negotiator from "negotiator";
 import { i18n } from "@/i18n/i18n.config";
 
 function getLocale(request: NextRequest): string | undefined {
-  const negotiatorHeaders: Record<string, string> = {};
-  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
+    try {
+        const negotiatorHeaders: Record<string, string> = {};
+        request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-  const locales: string[] = i18n.locales;
-  const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
-  
-  const locale = matchLocale(languages, locales, i18n.defaultLocale);
+        const locales: string[] = i18n.locales;
+        const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
+        
+        const locale = matchLocale(languages, locales, i18n.defaultLocale);
 
-  return locale;
+        return locale;
+    } catch (error) {
+        console.error("Error negociando el locale:", error);
+        // Retorna el idioma por defecto en caso de error
+        return i18n.defaultLocale;
+    }
 }
 
 export function middleware(request: NextRequest) {
@@ -44,6 +50,7 @@ export function middleware(request: NextRequest) {
             );
         }
     } catch (error) {
+        console.error("Error en el middleware:", error);
         return NextResponse.error();
     }
 }
