@@ -22,7 +22,7 @@ export function middleware(request: NextRequest) {
     try {
         const pathname = request.nextUrl.pathname;
 
-        if (pathname.startsWith('/assets/') || pathname === '/ads.txt' || pathname === '/robots.txt' || pathname === '/sitemap.xml') {
+        if (pathname.startsWith('/assets/')) {
             return;
         }
 
@@ -49,5 +49,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-    matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+    matcher: ["/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|ads.txt).*)"],
 };
