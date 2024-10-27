@@ -63,7 +63,7 @@ export default function TranslationContainer() {
                 options={fromLanguages}
                 selectFunction={(option : Option) => {setFromLanguage(option)}}
                 classNameProps={{
-                    general: "rounded-lg",
+                    general: "rounded-lg bg-tertiary",
                     area: "translationFrom",
                     selectedOption: "h-10 p-4 rounded-lg w-full",
                     options: "top-12 left-0 w-full grid-cols-2"
@@ -75,7 +75,7 @@ export default function TranslationContainer() {
                 options={toLanguages}
                 selectFunction={(option : Option) => {setToLanguage(option)}}
                 classNameProps={{
-                    general: "rounded-lg",
+                    general: "rounded-lg bg-tertiary",
                     area: "translationTo",
                     selectedOption: "h-10 p-4 rounded-lg w-full",
                     options: "top-12 left-0 w-full grid-cols-2"

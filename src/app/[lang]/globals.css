@@ -15,23 +15,28 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  display: grid;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
-  grid-template-columns: 200px 1fr;
-  grid-template-areas: 
-    'header content'
-  ;
   height: 100dvh;
   min-width: 350px;
   overflow: hidden;
 }
 
-body > header {
+.principal {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas: 
+    'header content'
+  ;
+  height: 100%;
+  overflow: hidden;
+}
+
+.principal > header {
   grid-area: header;
 }
 
-main {
+.principal > main {
   grid-area: content;
 }
 
@@ -64,7 +69,7 @@ main {
 }
 
 @media (max-width: 767px) {
-  body {
+  .principal {
     grid-template-areas: 
       'content'
       'header';

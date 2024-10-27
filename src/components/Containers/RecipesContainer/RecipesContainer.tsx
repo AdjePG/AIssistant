@@ -72,21 +72,21 @@ export default function RecipesContainer ({ lang } : Props) {
             steps: recipe.steps
         }))
     
-        const image = await generateRecipeImage({ title: recipe.title })
-        .then(result => {
-            if (result.errorMessage !== undefined) {
-                openToast(result.errorMessage, ToastClass.WARNING)
-            }
+        // const image = await generateRecipeImage({ title: recipe.title })
+        // .then(result => {
+        //     if (result.errorMessage !== undefined) {
+        //         openToast(result.errorMessage, ToastClass.WARNING)
+        //     }
         
-            return result.image
-        })
+        //     return result.image
+        // })
     
-        if (image === undefined) {
-            setIsLoading(false)
-            return;
-        }
+        // if (image === undefined) {
+        //     setIsLoading(false)
+        //     return;
+        // }
     
-        setImage(image)
+        // setImage(image)
         setIsLoading(false)
     }
 
@@ -103,7 +103,7 @@ export default function RecipesContainer ({ lang } : Props) {
                 label: recipes.submitButton
             }}
         />
-        {
+        {/* {
             !isLoading
                 ? 
                     <>
@@ -121,7 +121,7 @@ export default function RecipesContainer ({ lang } : Props) {
                     <div className={`${styles.picture} flex justify-center items-center bg-tertiary rounded-lg`}>
                         <LoadingComponent />
                     </div>
-        }
+        } */}
 
         {
             title === '' && !isLoading

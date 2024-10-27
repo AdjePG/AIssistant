@@ -25,6 +25,9 @@ const config: Config = {
         tertiary: "var(--tertiary)",
         hover: "var(--hover)",
       },
+      backgroundImage: {
+        'app-gradient': 'linear-gradient(to right, #e02573, #227cd1)',
+      },
     },
   },
   plugins: [],

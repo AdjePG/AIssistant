@@ -24,7 +24,8 @@
     "pages": {
         "home": {
             "leftTitle": "¡Welcome to ",
-            "rightTitle": "!"
+            "rightTitle": "!",
+            "functionalitiesDesc": "Try out the various functionalities of the smart assistant."
         },
         "translator": {
             "languages": {

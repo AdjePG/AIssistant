@@ -1,11 +1,6 @@
-"use client"
-
 import { useGlobalSettings } from "@/hooks/useGlobalSettings";
 import { i18n, Locale } from "@/i18n/i18n.config";
-import BulbIcon from "@/icons/BulbIcon";
-import RecipesIcon from "@/icons/RecipesIcon";
-import TrainingIcon from "@/icons/TrainingIcon";
-import TranslateIcon from "@/icons/TranslateIcon";
+import { links } from "@/utils/constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -13,29 +8,6 @@ import { useEffect, useState } from "react";
 interface Props {
     lang: Locale
 }
-
-const links = [
-    {
-        id: "translator",
-        path: "/translate",
-        icon: TranslateIcon
-    },
-    {
-        id: "recipes",
-        path: "/recipes",
-        icon: RecipesIcon
-    },
-    {
-        id: "trivia",
-        path: "/trivia",
-        icon: BulbIcon
-    },
-    {
-        id: "training",
-        path: "/training",
-        icon: TrainingIcon
-    },
-]
 
 export default function Navigator ({ lang } : Props) {
     const pathname = usePathname()
@@ -50,8 +22,8 @@ export default function Navigator ({ lang } : Props) {
     }, [pathname])
 
     return (
-        <nav className="w-full">
-            <ul className="list-none m-0 p-0 flex justify-center md:flex-col flex-1 gap-1">
+        <nav className="md:w-full">
+            <ul className="list-none m-0 p-0 flex md:flex-col flex-1 gap-1">
                 { 
                     links.map(link => {
                         let href : string = "";

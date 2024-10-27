@@ -24,7 +24,8 @@
     "pages": {
         "home": {
             "leftTitle": "Bienvenue à ",
-            "rightTitle": " !"
+            "rightTitle": "!",
+            "functionalitiesDesc": "Testez les différentes fonctionnalités de l'assistant intelligent."
         },
         "translator": {
             "languages": {

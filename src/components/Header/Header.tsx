@@ -57,26 +57,36 @@ export default function Header({children, section, lang} : Props) {
             }
       
             url = segments.join('/')
+
+            if (url === '') {
+                url += '/'
+            }
         }
         router.push(url)
     }
 
     return (
-        <div className="flex justify-between h-20 bg-secondary px-8 items-center select-none">
-            <h1 className='text-lg xs:text-3xl text-left font-semibold leading-relaxed'>{children}{titles[section]}</h1>
+        <div className={`flex justify-between h-20 px-8 items-center select-none ${section !== 'welcome' ? 'bg-secondary' : ''}`}>
+            {
+                section !== 'welcome'
+                ?
+                    <h1 className='text-lg xs:text-3xl text-left font-semibold leading-relaxed'>{children}{titles[section]}</h1>
+                :
+                    <>{children}</>
+            }
             <div className="flex gap-1">
                 <ComboBox
                     currentValue={initialValue}
                     options={options}
                     selectFunction={(option) => {redirectLocale(option)}}
                     classNameProps={{
-                        general: "rounded-full",
+                        general: `rounded-full ${section !== 'welcome' ? 'bg-tertiary' : 'bg-secondary'}`,
                         selectedOption: "rounded-full h-10 p-2",
                         mainLabel: "hidden",
                         options: "top-12 right-0 w-max grid-cols-2"
                     }}
                 />
-                <div className="bg-tertiary rounded-full">
+                <div className={`rounded-full ${section !== 'welcome' ? 'bg-tertiary' : 'bg-secondary'}`}>
                     <RoundedButton
                         clickFunction={changeColorTheme}
                     >

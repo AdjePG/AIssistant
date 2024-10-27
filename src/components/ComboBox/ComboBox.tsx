@@ -3,7 +3,7 @@ import ArrowDownIcon from "@/icons/ArrowDownIcon"
 import ArrowUpIcon from "@/icons/ArrowUpIcon"
 import { Option } from "@/utils/types"
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface Props {
     currentValue: Option
@@ -13,8 +13,22 @@ interface Props {
 }
 
 export default function ComboBox({ currentValue, options, selectFunction, classNameProps} : Props) {
+    const comboBox = useRef<HTMLDivElement>(null)
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const [selectedOption, setSelectedOption] = useState<Option>(currentValue)
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (comboBox.current && !comboBox.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [])
 
     useEffect(() => {
         setSelectedOption(currentValue)
@@ -34,7 +48,7 @@ export default function ComboBox({ currentValue, options, selectFunction, classN
     }
 
     return (
-        <div className={`${styles[classNameProps?.area ?? '']} relative select-none flex items-center justify-center bg-tertiary ${classNameProps?.general}`}>
+        <div ref={comboBox} className={`${styles[classNameProps?.area ?? '']} relative select-none flex items-center justify-center ${classNameProps?.general}`}>
             <div onClick={() => setIsOpen(!isOpen)} className={`flex gap-2 items-center justify-between hover:bg-hover transition-[background-color] duration-200 ease-in-out cursor-pointer ${classNameProps?.selectedOption}`}>
                 <div className="flex gap-2 items-center">
                     {

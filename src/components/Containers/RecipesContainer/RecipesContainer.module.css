@@ -3,7 +3,8 @@
     border-radius: 12px;
     display: grid;
     grid-template-areas: 
-        "image write"
+        /* "image write" */
+        "write write"
         "title title"
         "ingredients steps"
     ;
@@ -48,13 +49,13 @@
     .recipes_container {
         grid-template-areas: 
             "write"
-            "image"
+            /* "image" */
             "title"
             "ingredients"
             "steps"
         ;
         grid-template-columns: 1fr;
-        grid-template-rows: 150px 150px auto auto auto;
+        grid-template-rows: 150px /*150px*/ auto auto auto;
 
         .picture {
             aspect-ratio: auto;

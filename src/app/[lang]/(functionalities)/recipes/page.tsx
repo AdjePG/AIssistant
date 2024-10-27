@@ -20,7 +20,7 @@ export default async function Recipes({params} : Props) {
       <RecipesIcon filled duotone className="w-6 h-6 xs:w-8 xs:h-8 mr-2 xs:mr-4 inline-block"/>
     </Header>
     <AdBanner />
-    <div className="h-[calc(100%_-_192px)] content-center custom-scrollbar py-6 pl-6 pr-2">
+    <div className="h-[calc(100%_-_80px)] content-center custom-scrollbar py-6 pl-6 pr-2">
       <RecipesContainer lang={params.lang}/>
     </div>
     </>
