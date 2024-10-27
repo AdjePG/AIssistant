@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import TextBox from "@/components/TextBox/TextBox";
 import { LanguageType, TextBoxType, ToastClass } from "@/utils/types";
 import styles from "@/components/Containers/RecipesContainer/RecipesContainer.module.css"
 import { useRecipes } from "@/hooks/useRecipes";
-import ImageIcon from "@/icons/ImageIcon";
 import { useEffect } from "react";
 import { useToast } from "@/hooks/useToast";
 import { generateRecipeText, generateRecipeImage} from "@/services/recipes";
